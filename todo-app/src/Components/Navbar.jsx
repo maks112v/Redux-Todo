@@ -4,24 +4,26 @@ import {
 	MDBNavbarBrand,
 	MDBNavbarNav,
 	MDBNavItem,
-	MDBNavLink,
 	MDBNavbarToggler,
 	MDBCollapse,
 	MDBFormInline,
-	MDBDropdown,
-	MDBDropdownToggle,
-	MDBDropdownMenu,
-	MDBDropdownItem
 } from "mdbreact";
 
 class NavbarPage extends Component {
 	state = {
-		isOpen: false
+    isOpen: false,
+    search: '',
 	};
 
 	toggleCollapse = () => {
 		this.setState({ isOpen: !this.state.isOpen });
-	};
+  };
+  
+  searchHandler = e => {
+    this.setState({
+      search: e.target.value,
+    })
+  }
 
 	render() {
 		return (
@@ -38,7 +40,9 @@ class NavbarPage extends Component {
 									<input
 										className='form-control mr-sm-2'
 										type='text'
-										placeholder='Search'
+                    placeholder='Search'
+                    value={this.state.search}
+                    onChange={this.searchHandler}
 										aria-label='Search'
 									/>
 								</div>

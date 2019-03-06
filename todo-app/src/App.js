@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import {MDBCol, MDBRow, MDBContainer} from 'mdbreact';
+
 import TodoList from './Components/List'
 import Navbar from './Components/Navbar'
+import TaskForm from './Components/NewTask'
 
 
 class App extends Component {
@@ -8,8 +11,14 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <TodoList />
-        
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol>
+              <TodoList />
+            </MDBCol>
+            <TaskForm />
+          </MDBRow>
+        </MDBContainer>
       </div>
     );
   }
