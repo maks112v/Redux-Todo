@@ -13,7 +13,7 @@ class App extends Component {
         <Navbar />
         <MDBContainer>
           <MDBRow>
-            <MDBCol>
+            <MDBCol className='my-5'>
               <TodoList />
             </MDBCol>
             <TaskForm />

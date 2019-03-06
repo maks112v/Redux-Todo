@@ -30,15 +30,15 @@ class TaskForm extends Component {
     this.props.addTask(this.state.inputs);
     this.setState({
       inputs:{
+        ...this.state.inputs,
         task: '',
-        priority: this.props.initalPriority,
       }
     })
   }
 
 	render() {
 		return (
-			<MDBCol className='text-center'>
+			<MDBCol className='text-center mt-5'>
 				<form onSubmit={this.submitFormHandler}>
 					<h3>Add A Task</h3>
 					<MDBInput
@@ -56,7 +56,7 @@ class TaskForm extends Component {
 						name='priority'
             onChange={this.updateHandler}
 					>
-						<option value='1'>Normal</option>
+						<option value='1' >Normal</option>
 						<option value='2'>Important</option>
 						<option value='3'>Urgent</option>
 					</select>
